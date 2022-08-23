@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html,
+body{
+    background-color:#f9e514; 
+    font-size: 110%;
+}
+
+
+#canvas{ 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.square{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 1;
+    left: 0;
+    right: 0;
+    top: 8%;
+    margin: auto;
+    width: 80%;
+    min-width: 600px;
+    height: 60px;
+    min-height: 50px;
+    background-color: #FFFFFF
+}
+
+.pear{
+    display: flex;
+    align-items: center;
+    padding-left: 1%;
+   
+}
+.pearText{
+    display: flex;
+    align-items: center; 
+    margin-left: 1%;
+    font-size: 100%;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+.navigate{
+    display: flex;
+    gap: 5%;
+    margin-right: 5%;
+    justify-content: right;
+    align-items: center; 
+    width: 100%;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+.hoverUp{
+    transform-origin: bottom left;
+    transition: all .3s ease-in-out;
+    
+}
+.hoverUp:hover{
+     transform: scale(1.75);
+}
+
+.mainText{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    font-size: 225%;
+    font-family: 'Oswald', sans-serif;
+}
+.subText{
+    font-size: 65%;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+.gg-chevron-right {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 22px;
+    height: 22px;
+    border: 2px solid transparent;
+    border-radius: 100px
+}
+.gg-chevron-right::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(-45deg);
+    right: 6px;
+    top: 4px
+}
+
+.circlePlaceHolder{
+    position: absolute; 
+    right:20%;
+    top: 40%;
+    height: 300px;
+    width: 300px;
+    background-color: #8BEF56;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dots{
+    display: flex;
+    justify-content: center;
+    gap: 0.8%;
+    position: fixed;
+    top: 1;
+    left: 0;
+    right: 0;
+    bottom: 10%;
+}
+.dot{
+    height: 25px;
+    width: 25px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 4px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+.dot:hover{
+    border: 4px solid rgb(0, 0, 0);
+  }
