@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Mr+De+Haviland&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -9,135 +7,84 @@
 }
 html,
 body{
-    background-color:#f9e514; 
+    background-color:#ffffff; 
     font-size: 110%;
+    color: black;
 }
-
-
 #canvas{ 
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
-
-.square{
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: 1;
-    left: 0;
-    right: 0;
-    top: 8%;
-    margin: auto;
-    width: 80%;
-    min-width: 600px;
-    height: 60px;
-    min-height: 50px;
-    background-color: #FFFFFF
-}
-
-.pear{
+.LeftDivNav{
+    color: #ffc62d;
     display: flex;
     align-items: center;
-    padding-left: 1%;
-   
+    gap: 10px;
 }
-.pearText{
-    display: flex;
-    align-items: center; 
-    margin-left: 1%;
-    font-size: 100%;
-    font-family: 'Kdam Thmor Pro', sans-serif;
+.logo{
+    width: 50px;
+    height: auto;
 }
-.navigate{
+.Head{
+    z-index: 0;
     display: flex;
-    gap: 5%;
-    margin-right: 5%;
-    justify-content: right;
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
     width: 100%;
-    font-family: 'Kdam Thmor Pro', sans-serif;
+    min-width: 700px;
+    height: 60px;
+    background-color: #1c2837;
+    padding: 10px;
 }
 
-.hoverUp{
-    transform-origin: bottom left;
-    transition: all .3s ease-in-out;
-    
+.Neck{
+    height: 40px;
+    background-color: #2d4059;
 }
-.hoverUp:hover{
-     transform: scale(1.75);
+ 
+.Tittle{
+    z-index: 1;
+    font-size: 200%;
+    letter-spacing: 2px;
+    font-family: 'Mr De Haviland', cursive;
 }
-
-.mainText{
+.MiddleDivNav{
+    width: 50%;
+}
+.search{
+    padding: 8px;
+    border-style:solid;
+    align-self: center;
+    border-radius: 5px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    border-color: white;
+    height: 40px;
+    min-width: 300px;
+    width: 100%;
+}
+.search-icon{ 
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 30%;
-    left: 15%;
-    font-size: 225%;
-    font-family: 'Oswald', sans-serif;
-}
-.subText{
-    font-size: 65%;
-    font-family: 'Oswald', sans-serif;
-}
-
-
-.gg-chevron-right {
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    transform: scale(var(--ggs,1));
-    width: 22px;
-    height: 22px;
-    border: 2px solid transparent;
-    border-radius: 100px
-}
-.gg-chevron-right::after {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-bottom: 2px solid;
-    border-right: 2px solid;
-    transform: rotate(-45deg);
-    right: 6px;
-    top: 4px
-}
-
-.circlePlaceHolder{
-    position: absolute; 
-    right:20%;
-    top: 40%;
-    height: 300px;
-    width: 300px;
-    background-color: #8BEF56;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.dots{
-    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 0.8%;
-    position: fixed;
-    top: 1;
-    left: 0;
-    right: 0;
-    bottom: 10%;
+    border-style:solid;
+    align-self: center;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #ffd460;
+    border-color: #ffd460;
+    height: 40px;
+    width: 40px;
 }
-.dot{
-    height: 25px;
-    width: 25px;
-    background-color: rgba(255, 255, 255, 0);
-    border: 4px solid rgb(255, 255, 255);
-    border-radius: 50%;
-    display: inline-block;
-  }
+.search-icon:hover{ 
+    background-color: #ffbb00;
+    border-color: #ffbb00;
+    cursor: pointer;
+}
+.search-container{
+    display: flex;
+}
   
-.dot:hover{
-    border: 4px solid rgb(0, 0, 0);
-  }
