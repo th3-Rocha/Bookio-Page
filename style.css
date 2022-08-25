@@ -23,6 +23,13 @@ body{
     display: flex;
     align-items: center;
     gap: 10px;
+    height: 100%;
+}
+.LeftDivNav:hover{
+    outline-offset: 1px;
+    outline-style: solid;
+    outline-color: rgb(255, 255, 255);
+    outline-width: 2px;
 }
 .logo{
     width: 50px;
@@ -52,7 +59,7 @@ body{
     align-items: center;
     color: white;
     cursor: pointer;
-
+    text-shadow: 3px 3px #1c2837;
 }
 .Neck div:hover{
     align-items: center;
@@ -82,14 +89,18 @@ body{
     color: white;
     cursor: pointer;
 }
-
+.Promo{
+    
+    font-size: larger;
+    color: #FFF;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
 .RightDivNav{
     display: flex;
     gap: 10px;
     align-items: center;
-    
+    height: 100%;
     color: white;
-    text-justify: distribute-all-lines;
     
 }
 .RightDivNav:hover{
@@ -99,7 +110,10 @@ body{
     cursor: pointer;
     color: white;
     text-justify: distribute-all-lines;
-    
+    outline-offset: 1px;
+    outline-style: solid;
+    outline-color: rgb(255, 255, 255);
+    outline-width: 2px;
 }
 .search{
     padding: 8px;
