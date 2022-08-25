@@ -10,6 +10,7 @@ body{
     background-color:#ffffff; 
     font-size: 110%;
     color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 #canvas{ 
     position: absolute;
@@ -41,10 +42,29 @@ body{
 }
 
 .Neck{
+    justify-content: flex-start;
+    column-gap: 30px;
     height: 40px;
     background-color: #2d4059;
 }
- 
+.Neck div{
+    height: 100%;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+
+}
+.Neck div:hover{
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    outline-offset: 1px;
+    outline-style: solid;
+    outline-color: rgb(255, 255, 255);
+    outline-width: 2px;
+
+}
+
 .Tittle{
     z-index: 1;
     font-size: 200%;
@@ -53,6 +73,33 @@ body{
 }
 .MiddleDivNav{
     width: 50%;
+}
+
+.Menu{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.RightDivNav{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    
+    color: white;
+    text-justify: distribute-all-lines;
+    
+}
+.RightDivNav:hover{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    text-justify: distribute-all-lines;
+    
 }
 .search{
     padding: 8px;
@@ -65,6 +112,7 @@ body{
     height: 40px;
     min-width: 300px;
     width: 100%;
+    font-size: large;
 }
 .search-icon{ 
     display: flex;
