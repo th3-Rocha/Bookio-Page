@@ -1,3 +1,3 @@
-# Landing-Page
-A Landing Page with 3d artifact
+# Bookio-Page
+A Bookio Page a marketplace for books with a 3d UI
 https://th3-rocha.github.io/Bookio-Page/
