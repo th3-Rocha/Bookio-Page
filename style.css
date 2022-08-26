@@ -7,7 +7,7 @@
 }
 html,
 body{
-    background-color:#ffffff; 
+    background-color:rgb(238, 238, 238);
     font-size: 110%;
     color: black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -165,9 +165,11 @@ main{
 
 }
 .stickerPlace{
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 10px;
     overflow-y: hidden;
 }
 .sticker{
@@ -221,4 +223,90 @@ main{
     position: relative;
     width: 100%;
     height: auto;
+}
+
+.tittle2{
+    
+}
+
+.newsPlace{
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 0px;
+    overflow-y: hidden;
+}
+
+.bookHolder{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #FFF;
+    border-radius: 20px;
+    width: 300px;
+    height: 500px;
+}
+.tittleBook{
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+.price{
+    padding-top: 15px;
+}
+
+.bookHolder button{
+    justify-self: start;
+}
+
+.bookIlustration{
+    display: flex;
+    justify-content: center;
+    
+    max-width: 300px;
+    max-height: 300px;
+}
+/* buy button */
+.buyer {
+    border: none;
+    background: none;
+    border-radius: 15px;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 0.5em 0.0em;
+}
+
+.buyer span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 15px;
+    padding-right: 15px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.buyer:hover span {
+    letter-spacing: 8px;
+}
+.buyer:active span {
+    font-size: 14px;
+    width: 800;
+}
+
+.buyer svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+}
+.buyer:hover svg {
+    transform: translateX(0);
+    text-shadow: #ffbb00;
+}
+.buyer:active svg {
+    transform: scale(0.7);
+}
+/* buy button */
+.or {
+  color: orange;
 }
