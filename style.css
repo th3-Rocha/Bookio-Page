@@ -230,7 +230,7 @@ main{
 
 .newsPlace{
     display: grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 3%;

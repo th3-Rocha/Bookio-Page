@@ -45,55 +45,33 @@ booksInDOM.forEach(element => {
 
   container.appendChild(renderer.domElement);
   window.addEventListener("resize", handleWindowResize, true);
-  const geometry = new THREE.CircleGeometry( 5, 64 );
-  const material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
-  const circle = new THREE.Mesh( geometry, material );
-  scene.add( circle );
-  circle.scale.set(1, 1, 1);
-  circle.position.x = 0;
-  circle.position.z = 10;
+  
   let loader = new THREE.GLTFLoader();
 
-    let sizeBook = booksInDOM[Bookcount].getAttribute("size");
-    if(sizeBook == "thin"){
-      loader.load('gltf/book-thin.gltf',
-        (gltf) => {
-          object = gltf.scene;
-          object.position.y = 0;
-          object.position.z = 0;
-          object.position.x = 0;
-          object.scale.set(1,1,1);
-          scene.add(object);
-        }
-      );
-    }
-    else if(sizeBook == "medium"){
-      loader.load('gltf/book-medium.gltf',
-        (gltf) => {
-          object = gltf.scene;
-          object.position.y = 0;
-          object.position.z = 0;
-          object.position.x = 0;
-          object.scale.set(1,1,1);
-          scene.add(object);
-        }
-      );
-    }
-    else if(sizeBook == "large") {
-      loader.load('gltf/book-large.gltf',
-        (gltf) => {
-          object = gltf.scene;
-          object.position.y = 0;
-          object.position.z = 0;
-          object.position.x = 0;
-          object.scale.set(1,1,1);
-          scene.add(object);
-        }
-      );
-    }
+    let heightb = booksInDOM[Bookcount].getAttribute("heightb");
+    let pageCountb = booksInDOM[Bookcount].getAttribute("pageCountb");
+    let widthb = booksInDOM[Bookcount].getAttribute("widthb");
+
+
+    loader.load('gltf/book.gltf',
+      (gltf) => {
+        object = gltf.scene;
+        object.position.y = 0;
+        object.position.z = 0;
+        object.position.x = 0;
+        object.scale.set(widthb,heightb,pageCountb);
+        scene.add(object);
+      }
+    );
+  
+
+
+
+
+    let bookCoverTex = '/imgs/booksCovers/book-id-' + booksInDOM[Bookcount].id + '.jpg';
+
 
   };
-  
   let stateFunction = (name) =>{
   State = name;
   console.log(State);
@@ -101,8 +79,8 @@ booksInDOM.forEach(element => {
   }
   
   const handleWindowResize = () => {
-  HEIGHT = window.innerHeight;
-  WIDTH = window.innerWidth;
+  HEIGHT = 300;
+  WIDTH = 200;
   renderer.setSize(WIDTH, HEIGHT);
   camera.aspect = WIDTH / HEIGHT;
   camera.updateProjectionMatrix();
@@ -133,9 +111,6 @@ booksInDOM.forEach(element => {
 
 
   let main = () => {
-  // stateFunction();
-  var textOfTitle = document.getElementsByTagName("h3");
-  var textOfMain = document.getElementsByTagName("p");
   // create and renders 3d objects
   createScene();
   createLights();
