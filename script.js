@@ -79,10 +79,6 @@ booksInDOM.forEach(element => {
   }
   
   const handleWindowResize = () => {
-  HEIGHT = 300;
-  WIDTH = 200;
-  renderer.setSize(WIDTH, HEIGHT);
-  camera.aspect = WIDTH / HEIGHT;
   camera.updateProjectionMatrix();
   };
 
