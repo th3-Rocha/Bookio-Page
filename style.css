@@ -11,6 +11,13 @@ body{
     font-size: 110%;
     color: black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   
+}
+main{
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    flex-direction: column;
 }
 #canvas{ 
     position: absolute;
@@ -50,7 +57,7 @@ body{
 
 .Neck{
     justify-content: flex-start;
-    column-gap: 30px;
+    column-gap: 2%;
     height: 40px;
     background-color: #2d4059;
 }
@@ -141,6 +148,9 @@ body{
     height: 40px;
     width: 40px;
 }
+
+
+
 .search-icon:hover{ 
     background-color: #ffbb00;
     border-color: #ffbb00;
@@ -149,4 +159,66 @@ body{
 .search-container{
     display: flex;
 }
-  
+.courossel{
+   
+    
+
+}
+.stickerPlace{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    overflow-y: hidden;
+}
+.sticker{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    
+}
+.sticker:hover img{
+    border-radius: 80px;
+}
+.sticker:hover span{
+    font-size: 0%;
+    bottom: 150px;
+}
+
+.sticker img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: all 0.3s ease 0s;
+}
+
+.sticker span{
+    font-size: 80%;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: 5px;
+    background-color: white;
+    border-radius: 100px;
+    padding: 0.1em 0.01em;
+    transition: all 0.3s ease 0s;
+}
+.arrow{
+	width: 30px;
+	height: 30px;
+	transform: rotate(45deg);
+	border-width: .8vmin .8vmin 0 0;
+	border-style: solid;
+	border-color: #ff0000;
+	transition: .2s ease;
+    z-index: 12;
+}
+
+.img{
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
