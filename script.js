@@ -65,9 +65,6 @@ booksInDOM.forEach(element => {
     );
   
 
-
-
-
     let bookCoverTex = '/imgs/booksCovers/book-id-' + booksInDOM[Bookcount].id + '.jpg';
 
 
