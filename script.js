@@ -17,58 +17,82 @@ booksInDOM.forEach(element => {
   WIDTH;
   let State = "pyphone";
   let createScene = () => {
+    
 
-  HEIGHT = 300;
-  WIDTH = 200;
-  scene = new THREE.Scene();
-  aspectRatio = WIDTH / HEIGHT;
-  fieldOfView = 10;
-  nearPlane = 1;
-  farPlane = 10000;
-  camera = new THREE.PerspectiveCamera(
-    fieldOfView,
-    aspectRatio,
-    nearPlane,
-    farPlane
-  );
-  camera.position.x = 0;
-  camera.position.z = 6;
-  camera.position.y = 0;
-  renderer = new THREE.WebGLRenderer({
-    alpha: true,
-    antialias: true
-  });
-  renderer.setSize(WIDTH, HEIGHT);
-  renderer.shadowMap.enabled = true;
+    HEIGHT = 300;
+    WIDTH = 200;
+    scene = new THREE.Scene();
+    aspectRatio = WIDTH / HEIGHT;
+    fieldOfView = 10;
+    nearPlane = 1;
+    farPlane = 10000;
+    camera = new THREE.PerspectiveCamera(
+      fieldOfView,
+      aspectRatio,
+      nearPlane,
+      farPlane
+    );
+    camera.position.x = 0;
+    camera.position.z = 6;
+    camera.position.y = 0;
+    renderer = new THREE.WebGLRenderer({
+      alpha: true,
+      antialias: true
+    });
+    renderer.setSize(WIDTH, HEIGHT);
+    renderer.shadowMap.enabled = true;
 
-  container = booksInDOM[Bookcount];
+    container = booksInDOM[Bookcount];
 
-  container.appendChild(renderer.domElement);
-  window.addEventListener("resize", handleWindowResize, true);
-  
-  let loader = new THREE.GLTFLoader();
-
+    container.appendChild(renderer.domElement);
+    window.addEventListener("resize", handleWindowResize, true);
     let heightb = booksInDOM[Bookcount].getAttribute("heightb");
     let pageCountb = booksInDOM[Bookcount].getAttribute("pageCountb");
     let widthb = booksInDOM[Bookcount].getAttribute("widthb");
+    
+    let bookCoverTex = '/imgs/booksCovers/book-id-' + booksInDOM[Bookcount].id + '.jpg';
+    
+    const texture = new THREE.TextureLoader().load(bookCoverTex,{flipY:false});
+    let matBook2 = new THREE.MeshPhysicalMaterial({map: texture},{fog:true});
 
 
+
+
+
+
+
+    //carregar o mesh com material
+    let loader = new THREE.GLTFLoader();
     loader.load('gltf/book.gltf',
       (gltf) => {
         object = gltf.scene;
         object.position.y = 0;
         object.position.z = 0;
         object.position.x = 0;
+        object.rotation.z = 9.435;// loucrua
         object.scale.set(widthb,heightb,pageCountb);
+        let first = false;
+        object.traverse((child, i) => {
+        if (child.isMesh) {
+          if(first == false){//codigo spaghetti aqui
+            child.material = matBook2;
+            first = true;
+          }
+          else{
+            
+
+          }
+        }
+        
+        });
+
         scene.add(object);
+    
       }
     );
-  
-
-    let bookCoverTex = '/imgs/booksCovers/book-id-' + booksInDOM[Bookcount].id + '.jpg';
-
-
+     //carregar o mesh com material
   };
+  
   let stateFunction = (name) =>{
   State = name;
   console.log(State);
