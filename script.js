@@ -75,7 +75,7 @@ booksInDOM.forEach(element => {
         object.traverse((child, i) => {
         if (child.isMesh) {
           if(first == false){//codigo spaghetti aqui
-            child.material = matBook2;
+            //child.material = matBook2;
             first = true;
           }
           else{
