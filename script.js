@@ -50,10 +50,10 @@ booksInDOM.forEach(element => {
     let pageCountb = booksInDOM[Bookcount].getAttribute("pageCountb");
     let widthb = booksInDOM[Bookcount].getAttribute("widthb");
     
-    let bookCoverTex = '/imgs/booksCovers/book-id-' + booksInDOM[Bookcount].id + '.jpg';
+    let bookCoverTex = 'imgs/booksCovers/book-id-' + booksInDOM[Bookcount].id + '.jpg';
     
-    const texture = new THREE.TextureLoader().load(bookCoverTex,{flipY:false});
-    let matBook2 = new THREE.MeshPhysicalMaterial({map: texture},{fog:true});
+    const texture = new THREE.TextureLoader().load(bookCoverTex);
+    let matBook2 = new THREE.MeshPhysicalMaterial({map: texture});
 
 
 
