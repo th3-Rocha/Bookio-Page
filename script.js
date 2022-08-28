@@ -53,7 +53,7 @@ booksInDOM.forEach(element => {
     let bookCoverTex = 'imgs/booksCovers/book-id-' + booksInDOM[Bookcount].id + '.jpg';
     
     const texture = new THREE.TextureLoader().load(bookCoverTex);
-    let matBook2 = new THREE.MeshPhysicalMaterial({map: texture});
+    let matBook2 = new THREE.MeshBasicMaterial({map: texture});
 
 
 
@@ -75,7 +75,7 @@ booksInDOM.forEach(element => {
         object.traverse((child, i) => {
         if (child.isMesh) {
           if(first == false){//codigo spaghetti aqui
-            //child.material = matBook2;
+            child.material = matBook2;
             first = true;
           }
           else{
