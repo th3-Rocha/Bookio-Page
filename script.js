@@ -73,8 +73,8 @@ booksInDOM.forEach(element => {
         object.position.y = 0;
         object.position.z = 0;
         object.position.x = 0;
-        object.rotation.z = 9.435;// loucrua
-        object.scale.set(widthb,heightb,pageCountb);
+        object.rotation.y = Math.random() * 100;        ;
+        object.scale.set(widthb,-heightb,pageCountb);
         let first = false;
         object.traverse((child, i) => {
         if (child.isMesh) {
