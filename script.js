@@ -15,7 +15,6 @@ booksInDOM.forEach(element => {
   object,
   HEIGHT,
   WIDTH;
-  let State = "pyphone";
   let createScene = () => {
     
 
@@ -53,8 +52,11 @@ booksInDOM.forEach(element => {
     let bookCoverTex = 'imgs/booksCovers/book-id-' + booksInDOM[Bookcount].id + '.jpg';
     
     const texture = new THREE.TextureLoader().load(bookCoverTex);
-    let matBook2 = new THREE.MeshBasicMaterial({map: texture});
 
+    let matBook2 = new THREE.MeshStandardMaterial({map: texture,
+      roughness:0.0,
+      metalness:0.2,
+    });
 
 
 
@@ -93,30 +95,21 @@ booksInDOM.forEach(element => {
      //carregar o mesh com material
   };
   
-  let stateFunction = (name) =>{
-  State = name;
-  console.log(State);
-
-  }
   
   const handleWindowResize = () => {
   camera.updateProjectionMatrix();
   };
 
   const createLights = () => {
-  const ambientLight = new THREE.HemisphereLight(0x404040, 0x404040,2);
+  const directionalLight = new THREE.DirectionalLight(0xdfebff, 1.5);
+  directionalLight.position.set(1, 0, 2);
 
-  const directionalLight = new THREE.DirectionalLight(0xdfebff, 2);
-  directionalLight.position.set(0, 0, 0);
-
-
-  scene.add(ambientLight, directionalLight);
+  scene.add(directionalLight);
   };
 
 
   const loop = () => {
   renderer.render(scene, camera);
-  renderer.outputEncoding = THREE.sRGBEncoding;
   if (object) {
     object.rotation.y -= 0.01;
   }
