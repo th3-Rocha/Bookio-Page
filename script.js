@@ -17,7 +17,7 @@ booksInDOM.forEach(element => {
   WIDTH;
   let createScene = () => {
     
-
+    
     HEIGHT = 300;
     WIDTH = 200;
     scene = new THREE.Scene();
@@ -49,14 +49,16 @@ booksInDOM.forEach(element => {
     let pageCountb = booksInDOM[Bookcount].getAttribute("pageCountb");
     let widthb = booksInDOM[Bookcount].getAttribute("widthb");
     
+    let pageColorHex = booksInDOM[Bookcount].getAttribute("pageColorHex");
     let bookCoverTex = 'imgs/booksCovers/book-id-' + booksInDOM[Bookcount].id + '.jpg';
     
     const texture = new THREE.TextureLoader().load(bookCoverTex);
 
-    let matBook2 = new THREE.MeshStandardMaterial({map: texture,
+    let matBook = new THREE.MeshStandardMaterial({map: texture,
       roughness:0.0,
       metalness:0.2,
     });
+    let matBookPage = new THREE.MeshStandardMaterial({color: pageColorHex});
 
 
 
@@ -77,11 +79,11 @@ booksInDOM.forEach(element => {
         object.traverse((child, i) => {
         if (child.isMesh) {
           if(first == false){//codigo spaghetti aqui
-            child.material = matBook2;
+            child.material = matBook;
             first = true;
           }
           else{
-            
+            child.material = matBookPage;
 
           }
         }
@@ -102,7 +104,7 @@ booksInDOM.forEach(element => {
 
   const createLights = () => {
   const directionalLight = new THREE.DirectionalLight(0xdfebff, 1.5);
-  directionalLight.position.set(1, 0, 2);
+  directionalLight.position.set(0, 0, 2);
 
   scene.add(directionalLight);
   };
