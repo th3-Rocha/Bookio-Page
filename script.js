@@ -58,7 +58,7 @@ booksInDOM.forEach(element => {
       roughness:0.0,
       metalness:0.2,
     });
-    let matBookPage = new THREE.MeshStandardMaterial({color: pageColorHex});
+    let matBookPage = new THREE.MeshStandardMaterial({color: pageColorHex,metalness:0.5});
 
 
 
